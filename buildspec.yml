@@ -12,11 +12,11 @@ phases:
       - ECR_LOGIN_PASSWORD=$(aws ecr get-login-password --region ${AWS_DEFAULT_REGION})  # Capture output
       - echo $ECR_LOGIN_PASSWORD | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
       - REPOSITORY_URI=${ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME} # Use retrieved environment variable
-      - printf '[{repository_uri":${REPOSITORY_URI}}]'
+      - printf '[{"repository_uri":"%s"}]' $REPOSITORY_URI
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - printf '[{commit_hash":${COMMIT_HASH}}]'
+      - printf '[{"commit_hash":"%s"}]' $COMMIT_HASH
       - IMAGE_TAG=${COMMIT_HASH:=latest}
-      - printf '[{image_tag":${IMAGE_TAG}}]'
+      - printf '[{"image_tag":"%s"}]' $IMAGE_TAG
 
   build:
     commands:
@@ -38,4 +38,3 @@ phases:
 artifacts:
   files:
     - imagedefinitions.json
-
