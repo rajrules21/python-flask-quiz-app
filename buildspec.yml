@@ -25,6 +25,11 @@ phases:
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
 
+  create_ecr_repo:
+    commands:
+      - echo Creating Amazon ECR repository...
+      - aws ecr create-repository --repository-name $IMAGE_REPO_NAME
+
   post_build:
     commands:
       - echo Build completed on `date`.
