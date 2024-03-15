@@ -17,6 +17,8 @@ phases:
       - printf '[{"commit_hash":"%s"}]' $COMMIT_HASH
       - IMAGE_TAG=${COMMIT_HASH:=latest}
       - printf '[{"image_tag":"%s"}]' $IMAGE_TAG
+      - echo Creating Amazon ECR repository...
+      - aws ecr create-repository --repository-name $IMAGE_REPO_NAME
 
   build:
     commands:
@@ -25,10 +27,6 @@ phases:
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
 
-  create_ecr_repo:
-    commands:
-      - echo Creating Amazon ECR repository...
-      - aws ecr create-repository --repository-name $IMAGE_REPO_NAME
 
   post_build:
     commands:
