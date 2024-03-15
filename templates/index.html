@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Quiz App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to Quiz App</h1>
+    <p>Choose a quiz to start:</p>
+    <div class="quiz-row">
+        <!-- AWS Quiz -->
+        <div class="quiz-box">
+            <img class="quiz-icon" src="{{ url_for('static', filename='images/aws.png') }}" alt="AWS Icon">
+            <div class="quiz-text">
+                <a href="/aws_quiz">AWS Quiz</a>
+            </div>
+        </div>
+
+        <!-- Azure Quiz -->
+        <div class="quiz-box">
+            <img class="quiz-icon" src="{{ url_for('static', filename='images/azure.png') }}" alt="Azure Icon">
+            <div class="quiz-text">
+                <a href="/azure_quiz">Azure Quiz</a>
+            </div>
+        </div>
+
+        <!-- Terraform Quiz -->
+        <div class="quiz-box">
+            <img class="quiz-icon" src="{{ url_for('static', filename='images/terraform.png') }}" alt="Terraform Icon">
+            <div class="quiz-text">
+                <a href="/terraform_quiz">Terraform Quiz</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

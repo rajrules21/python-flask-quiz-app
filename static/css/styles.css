@@ -1,0 +1,24 @@
+
+/* Style for square boxes */
+.quiz-box {
+    display: inline-block;
+    border: 2px solid #333;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+/* Style for quiz icons */
+.quiz-icon {
+    max-width: 80px;
+    aspect-ratio: 1; /* Enforces a 1:1 aspect ratio */
+}
+
+/* Style for quiz text */
+.quiz-text {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+}
