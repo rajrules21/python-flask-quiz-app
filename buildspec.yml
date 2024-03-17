@@ -35,7 +35,7 @@ phases:
       - echo $ECR_LOGIN_PASSWORD | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - printf '[{"name":${IMAGE_REPO_NAME},"imageUri": ${REPOSITORY_URI}}]' > imagedefinitions.json
+      - echo '[{"name":"'"${IMAGE_REPO_NAME}"'","imageUri":"'"${REPOSITORY_URI}"'"}]' > imagedefinitions.json
       
 artifacts:
   files:
