@@ -16,7 +16,7 @@ phases:
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - printf '[{"commit_hash":"%s"}]' $COMMIT_HASH
       - IMAGE_TAG=${COMMIT_HASH:=latest}
-      - printf '[{"image_tag":"%s"}]' $IMAGE_TAG
+
 
 
   build:
