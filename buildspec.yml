@@ -35,7 +35,9 @@ phases:
       - echo $ECR_LOGIN_PASSWORD | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - echo $REPOSITORY_URI > imagedefinitions.json
+      - echo '{"ImageURI": "'$REPOSITORY_URI'"}' > imagedefinitions.json.tmp  # Create temporary JSON file
+      - jq . imagedefinitions.json.tmp > imagedefinitions.json  # Format JSON using jq
+      - rm imagedefinitions.json.tmp  # Remove temporary file
       
 artifacts:
   files:
