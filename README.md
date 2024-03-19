@@ -2,12 +2,11 @@
 
 This is a simple quiz application built using Python Flask.
 
+![Alt Text](https://github.com/rajrules21/python-flask-quiz-app/blob/12e8eafcde4b6371f3810dc91108ce66d4c911d6/quiz-app.jpg)
+
 ## Features
 
 - Multiple-choice questions
-- Randomized question order
-- Score tracking
-- Responsive design
 
 ## Installation
 
@@ -34,7 +33,7 @@ This is a simple quiz application built using Python Flask.
 1. Run the Flask app:
 
     ```bash
-    python app.py
+    flask --app app run
     ```
 
 2. Open your web browser and go to [http://localhost:5000](http://localhost:5000)
@@ -43,7 +42,9 @@ This is a simple quiz application built using Python Flask.
 
 ## Configuration
 
-You can customize the quiz questions and options by modifying the `questions.json` file.
+You can customize the quiz questions and options by modifying the `.html` files in templates folder.
+
+Please note that this is sample application and does not have full functionality.
 
 ## Contributing
 
