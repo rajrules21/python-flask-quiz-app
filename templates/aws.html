@@ -9,6 +9,64 @@
 <body>
 
     <h1>Welcome to AWS Quiz</h1>
-    
+
+    <div class="question">
+        <p>1. What is the maximum number of buckets that can be created in Amazon S3 by default?</p>
+        <div class="options">
+            <label><input type="radio" name="q1" value="a"> a) 100</label><br>
+            <label><input type="radio" name="q1" value="b"> b) 500</label><br>
+            <label><input type="radio" name="q1" value="c"> c) 1000</label><br>
+            <label><input type="radio" name="q1" value="d"> d) Unlimited</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>2. Which AWS service provides a fully managed NoSQL database?</p>
+        <div class="options">
+            <label><input type="radio" name="q2" value="a"> a) Amazon RDS</label><br>
+            <label><input type="radio" name="q2" value="b"> b) Amazon Redshift</label><br>
+            <label><input type="radio" name="q2" value="c"> c) Amazon DynamoDB</label><br>
+            <label><input type="radio" name="q2" value="d"> d) Amazon Aurora</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>3. What is the billing granularity of AWS Lambda?</p>
+        <div class="options">
+            <label><input type="radio" name="q3" value="a"> a) 100 milliseconds</label><br>
+            <label><input type="radio" name="q3" value="b"> b) 1 second</label><br>
+            <label><input type="radio" name="q3" value="c"> c) 100 milliseconds</label><br>
+            <label><input type="radio" name="q3" value="d"> d) 1 millisecond</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>4. Which AWS service is used for content delivery?</p>
+        <div class="options">
+            <label><input type="radio" name="q4" value="a"> a) Amazon S3</label><br>
+            <label><input type="radio" name="q4" value="b"> b) Amazon EC2</label><br>
+            <label><input type="radio" name="q4" value="c"> c) Amazon CloudFront</label><br>
+            <label><input type="radio" name="q4" value="d"> d) Amazon SQS</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <p>5. What is the default storage class in Amazon S3?</p>
+        <div class="options">
+            <label><input type="radio" name="q5" value="a"> a) S3 Standard</label><br>
+            <label><input type="radio" name="q5" value="b"> b) S3 Standard-IA</label><br>
+            <label><input type="radio" name="q5" value="c"> c) S3 Glacier</label><br>
+            <label><input type="radio" name="q5" value="d"> d) S3 One Zone-IA</label>
+        </div>
+    </div>
+
+    <button onclick="submitQuiz()">Submit Quiz</button>
+
+    <script>
+        function submitQuiz() {
+            // Add your quiz submission logic here
+            alert('Quiz submitted!');
+        }
+    </script>
 </body>
 </html>
